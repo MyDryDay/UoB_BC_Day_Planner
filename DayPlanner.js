@@ -15,6 +15,7 @@ $(document).ready(function(){
     var blocks = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
     // This loops creates a series of <div>s, each with an id coresponding to
     // one of the values in the "blocks" variable
+    // These <div>s will be where each of the time slots for the day planner will go
     for(var i = 0; i < blocks.length; i++){
         // var timeSlot = "<div class = 'timeSlot'></div>";
         // console.log(blocks[i]);
