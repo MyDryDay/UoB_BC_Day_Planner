@@ -12,11 +12,17 @@ $(document).ready(function(){
 
     // Each number in the array coresponds to a particular timeslot
     // 7 = 7am - 8am, 13 = 1pm - 2pm, 18 = 6pm - 7pm etc.
-    // var timeSlots = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+    var blocks = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+    // This loops creates a series of <div>s, each with an id coresponding to
+    // one of the values in the "blocks" variable
+    for(var i = 0; i < blocks.length; i++){
+        // var timeSlot = "<div class = 'timeSlot'></div>";
+        // console.log(blocks[i]);
+        // $(".timeSlot").attr("id", blocks[i]);
+        // $("#timeBlocks").append(timeSlot);
 
-    // for(i = 0; i < timeSlots.length; i++){
-    //     var timeSlot = "<div><div>";
-    //     $(timeSlot).attr("id", timeSlots[i]);
-    //     $("#timeBlocks").append(timeSlot);
-    // }
+        var timeSlot = "<div id = " + blocks[i] + "></div>";
+        $("#timeBlocks").append(timeSlot);
+
+    }
 })
