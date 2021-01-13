@@ -22,7 +22,7 @@ $(document).ready(function(){
         // $(".timeSlot").attr("id", blocks[i]);
         // $("#timeBlocks").append(timeSlot);
 
-        var timeSlot = "<div id = " + blocks[i] + "></div>";
+        var timeSlot = "<div id = " + blocks[i] + " class = timeslot></div>";
         $("#timeBlocks").append(timeSlot);
 
     }
