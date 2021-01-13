@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     // Adds a new <div> element with the id of "timeBlocks" to the <div> with a class of "container"
     // This will be where all the individual timeblocks will be displayed
-    var timeBlocks = "<div id = 'timeBlocks'></div>"
+    var timeBlocks = "<div id = 'timeBlocks' class = 'time-block'></div>"
     $(".container").append(timeBlocks); 
 
     // Each number in the array coresponds to a particular timeslot
@@ -22,7 +22,7 @@ $(document).ready(function(){
         // $(".timeSlot").attr("id", blocks[i]);
         // $("#timeBlocks").append(timeSlot);
 
-        var timeSlot = "<div id = " + blocks[i] + " class = timeslot></div>";
+        var timeSlot = "<div id = " + blocks[i] + " class = 'row hour'></div>";
         $("#timeBlocks").append(timeSlot);
 
     }
