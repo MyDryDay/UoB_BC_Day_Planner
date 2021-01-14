@@ -32,12 +32,23 @@ $(document).ready(function(){
         var timeSlot = "<div id = " + blocks[i] + " class = 'row hour'></div>";
         $("#timeBlocks").append(timeSlot);
 
-        var textInput = "<input type = 'text' id = 'textInput' class = '" + blocks[i] + " col-md-11 col-sm-11' name = 'textInput'>";
+        var time = "<p class = 'hour col-md-1 col-sm-1 " + blocks[i] + "'>" + blocks[i] + "</p>"
+        $("#" + blocks[i]).append(time);
+
+        var textInput = "<input type = 'text' id = 'textInput' class = '" + blocks[i] + " col-md-10 col-sm-10' name = 'textInput'>";
         $("#" + blocks[i]).append(textInput);
 
         var saveBtn = "<input type = 'button' id = 'saveBtn' class = '" + blocks[i] + " saveBtn col-md-1 col-sm-1'>"
         $("#" + blocks[i]).append(saveBtn);
-        
+  
+    }
+
+    // The following will append either "AM" or "PM" to the end of the text within the first <p> child of any element.
+    // What will be appended is decided by whether or not it's timeslot is less than or equal to 11 (for "AM") and greater than or equal to 12 (for "PM")
+    if(blocks[i] <= 11){
+        $("p:first-child").append("AM");
+    } else{
+        $("p:first-child").append("PM");
     }
 
     // The following loop compares the value of each index from "blocks" (which were previously assigned as classes to each timeslot)
@@ -61,5 +72,14 @@ $(document).ready(function(){
             console.log("nope");
         }
     }
+
     
 })
+
+
+
+// TO DO:
+// FIX IF/ELSE STATEMENT ON LINE 48
+// STORE TEXT INPUT TO LOCAL MEMORY & ENSURE IT PERSISTS UPON RELOADING
+// CLEAR LOCAL STORAGE AT THE BEGINNING OF A NEW DAY
+// CLEAN UP THE PRESENTATION
