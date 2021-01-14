@@ -14,8 +14,8 @@ $(document).ready(function(){
     // 7 = 7am - 8am, 13 = 1pm - 2pm, 18 = 6pm - 7pm etc.
     var blocks = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
     // This loops creates a series of <div>s, each with an id coresponding to
-    // one of the values in the "blocks" variable
-    // These <div>s will be where each of the time slots for the day planner will go
+    // one of the values in the "blocks" variable.
+    // It then creates a textfield input & an input button and appends them to the aforementioned <div>s.
     for(var i = 0; i < blocks.length; i++){
         // var timeSlot = "<div class = 'timeSlot'></div>";
         // console.log(blocks[i]);
@@ -25,5 +25,12 @@ $(document).ready(function(){
         var timeSlot = "<div id = " + blocks[i] + " class = 'row hour'></div>";
         $("#timeBlocks").append(timeSlot);
 
+        var textInput = "<input type = 'text' id = 'textInput' class = 'col-md-11' name = 'textInput'>";
+        $("#" + blocks[i]).append(textInput);
+
+        var saveBtn = "<input type = 'button' id = 'saveBtn' class = 'saveBtn col-md-1'>"
+        $("#" + blocks[i]).append(saveBtn);
     }
+
+    
 })
