@@ -32,5 +32,9 @@ $(document).ready(function(){
         $("#" + blocks[i]).append(saveBtn);
     }
 
+    // The following variable will get the current time based on the user's system
+    var currentTime = currentDate.toLocaleString(luxon.DateTime.TIME_SIMPLE);
+    console.log(currentTime);
+
     
 })
