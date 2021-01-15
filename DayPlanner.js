@@ -68,17 +68,17 @@ $(document).ready(function(){
         })
 
         
-        // function getFromStorage(){
-        //     for(var i = 0; i < blocks.length; i++){
-        //         var itemsInStorage = localStorage.getItem("inputFromSlot" + blocks[i]);
-        //         console.log(itemsInStorage);
+        function getFromStorage(){
+            for(var i = 0; i < blocks.length; i++){
+                var itemsInStorage = localStorage.getItem("inputFromSlot" + blocks[i]);
+                console.log(itemsInStorage);
 
-        //         $(".input" + blocks[i]).append(JSON.stringify(itemsInStorage));
-        //     }
-        // }
+                $(".input" + blocks[i]).append(JSON.stringify(itemsInStorage));
+            }
+        }
 
     }
-    // getFromStorage();
+    getFromStorage();
 
 
 })
