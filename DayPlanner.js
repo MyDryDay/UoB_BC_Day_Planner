@@ -34,7 +34,7 @@ $(document).ready(function(){
         var time = "<p id = 'time" + blocks[i] + "'class = 'hour col-md-1 col-sm-1'>" + blocks[i] + "</p>"
         $("#timeSlot" + blocks[i]).append(time);
 
-        var textInput = "<input type = 'text' id = 'textInput input" + blocks[i] + "' class = 'col-md-10 col-sm-10' name = 'textInput'>";
+        var textInput = "<input type = 'text' id = 'textInput' class = 'col-md-10 col-sm-10 input" + blocks[i] + "' name = 'textInput'>";
         $("#timeSlot" + blocks[i]).append(textInput);
 
         var saveBtn = "<input type = 'button' id = 'save" + blocks[i] + "' class = 'saveBtn col-md-1 col-sm-1'>"
@@ -48,59 +48,25 @@ $(document).ready(function(){
             $("#time" + blocks[i]).append("PM");
         }
 
+        // The following compares the value of each index from "blocks" (which were previously assigned as classes to each timeslot)
+        // with the currentHour. Depending on whether currentHour is greater than, lesser than or equal to the value of each index
+        // the background colour of the element will change. This allows the background colour for past, present and future timeslots to be different.
         if(currentHour > blocks[i]){
-            // console.log(blocks[i]);
-            $("#input" + blocks[i]).addClass("past");
+            $(".input" + blocks[i]).addClass("past");
         } else if(currentHour < blocks[i]){
-            // console.log(blocks[i]);
-            $("#input" + blocks[i]).addClass("future");
+            $(".input" + blocks[i]).addClass("future");
         } else if(currentHour == blocks[i]){
-            // console.log(blocks[i]);
-            $("#input" + blocks[i]).addClass("present");
-        } else{
-            console.log("nope");
+            $(".input" + blocks[i]).addClass("present");
         }
-        
+
     }
 
-
-    // // The following loop compares the value of each index from "blocks" (which were previously assigned as classes to each timeslot)
-    // // with the currentHour
-    // // Depending on whether currentHour is greater than, lesser than or equal to the value of each index
-    // // the background colour of the element will change.
-    // // This allows the background colour for past, present and future timeslots to be different.
-    // for(var i = 0; i < blocks.length; i++){
-    //     // console.log(blocks[i]);
-
-    //     if(currentHour > blocks[i]){
-    //         // console.log(blocks[i]);
-    //         $("." + blocks[i]).addClass("past");
-    //     } else if(currentHour < blocks[i]){
-    //         // console.log(blocks[i]);
-    //         $("." + blocks[i]).addClass("future");
-    //     } else if(currentHour == blocks[i]){
-    //         // console.log(blocks[i]);
-    //         $("." + blocks[i]).addClass("present");
-    //     } else{
-    //         console.log("nope");
-    //     }
-    // }
-
-    // $("#saveBtn").click(function(event){
-    //     event.preventDefault();
-        
-    //     for(i = 0; i < blocks.length; i++){
-    //         var inputText = $("[#textInput][." + blocks[i] + "]").val();
-    //         console.log(inputText);
-    //     }
-
-    // });
 })
 
 
 
 // TO DO:
-// FIX IF/ELSE STATEMENT ON LINE 48
+// FIX IF/ELSE STATEMENT ON LINE 48                                        - FIXED
 // STORE TEXT INPUT TO LOCAL MEMORY & ENSURE IT PERSISTS UPON RELOADING
 // CLEAR LOCAL STORAGE AT THE BEGINNING OF A NEW DAY
 // CLEAN UP THE PRESENTATION
