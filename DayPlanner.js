@@ -59,7 +59,27 @@ $(document).ready(function(){
             $(".input" + blocks[i]).addClass("present");
         }
 
+        // The following saves the user's input into each of the timeslots and stores them in the user's local storage
+        $("#save" + blocks[i]).on("click", function(event){
+            event.preventDefault();
+            for(var i = 0; i < blocks.length; i++){
+                localStorage.setItem("inputFromSlot" + blocks[i], $(".input" + blocks[i]).val());
+            }
+        })
+
+        
+        // function getFromStorage(){
+        //     for(var i = 0; i < blocks.length; i++){
+        //         var itemsInStorage = localStorage.getItem("inputFromSlot" + blocks[i]);
+        //         console.log(itemsInStorage);
+
+        //         $(".input" + blocks[i]).append(JSON.stringify(itemsInStorage));
+        //     }
+        // }
+
     }
+    // getFromStorage();
+
 
 })
 
