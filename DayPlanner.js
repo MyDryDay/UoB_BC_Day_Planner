@@ -41,7 +41,7 @@ $(document).ready(function(){
         var textInput = "<textarea id = 'textInput' class = 'col-md-10 col-sm-10 input" + blocks[i] + "' name = 'textInput'>";
         $("#timeSlot" + blocks[i]).append(textInput);
 
-        var saveBtn = "<button type = 'button' id = 'save" + blocks[i] + "' class = 'saveBtn col-md-1 col-sm-1'><i class='far fa-save fa-4x'></i></button>"
+        var saveBtn = "<button type = 'button' id = 'save" + blocks[i] + "' class = 'saveBtn col-md-1 col-sm-1'><i class='far fa-save fa-2x'></i></button>"
         $("#timeSlot" + blocks[i]).append(saveBtn);
   
         // The following will append either "AM" or "PM" to the end of the text within the first <p> child of any element.
