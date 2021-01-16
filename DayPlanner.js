@@ -34,7 +34,8 @@ $(document).ready(function(){
         var time = "<p id = 'time" + blocks[i] + "'class = 'hour col-md-1 col-sm-1'>" + blocks[i] + "</p>"
         $("#timeSlot" + blocks[i]).append(time);
 
-        var textInput = "<input type = 'text' id = 'textInput' class = 'col-md-10 col-sm-10 input" + blocks[i] + "' name = 'textInput'>";
+        // var textInput = "<input type = 'text' id = 'textInput' class = 'col-md-10 col-sm-10 input" + blocks[i] + "' name = 'textInput'>";
+        var textInput = "<textarea id = 'textInput' class = 'col-md-10 col-sm-10 input" + blocks[i] + "' name = 'textInput'>";
         $("#timeSlot" + blocks[i]).append(textInput);
 
         var saveBtn = "<input type = 'button' id = 'save" + blocks[i] + "' class = 'saveBtn col-md-1 col-sm-1'>"
@@ -73,7 +74,7 @@ $(document).ready(function(){
                 var itemsInStorage = localStorage.getItem("inputFromSlot" + blocks[i]);
                 console.log(itemsInStorage);
 
-                $(".input" + blocks[i]).append(JSON.stringify(itemsInStorage));
+                $(".input" + blocks[i]).append(itemsInStorage);
             }
         }
 
