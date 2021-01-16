@@ -5,9 +5,12 @@ $(document).ready(function(){
     var currentDate = luxon.DateTime.local();
     $("#currentDay").text("Today's date is: " + currentDate.toLocaleString());
 
-    // The following variable will get the current time based on the user's system
+    // The following variable will get the current time based on the user's system (inc. AM/PM)
     var currentTime = currentDate.toLocaleString(luxon.DateTime.TIME_SIMPLE);
     console.log(currentTime);
+    // The following variable will get the current minute of the hour based on the user's system
+    var currentMinute = currentDate.minute;
+    console.log(currentMinute);
     // The following variable will get the current hour based on the user's system
     var currentHour = currentDate.hour;
     console.log(currentHour);
@@ -68,7 +71,7 @@ $(document).ready(function(){
             }
         })
 
-        
+        // The following function gets stored data from the local storage and appends it to the specific timeslot it belongs to
         function getFromStorage(){
             for(var i = 0; i < blocks.length; i++){
                 var itemsInStorage = localStorage.getItem("inputFromSlot" + blocks[i]);
@@ -81,6 +84,10 @@ $(document).ready(function(){
     }
     getFromStorage();
 
+    // Here is a very simple if statement that simply clears the user's local storage should the current hour & minutes
+    if(currentHour == 23 && currentMinute == 59){
+        localStorage.clear();
+    }
 
 })
 
@@ -88,6 +95,6 @@ $(document).ready(function(){
 
 // TO DO:
 // FIX IF/ELSE STATEMENT ON LINE 48                                        - FIXED
-// STORE TEXT INPUT TO LOCAL MEMORY & ENSURE IT PERSISTS UPON RELOADING
+// STORE TEXT INPUT TO LOCAL MEMORY & ENSURE IT PERSISTS UPON RELOADING    - FIXED
 // CLEAR LOCAL STORAGE AT THE BEGINNING OF A NEW DAY
 // CLEAN UP THE PRESENTATION
