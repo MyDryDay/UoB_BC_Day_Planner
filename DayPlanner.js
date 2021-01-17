@@ -41,7 +41,7 @@ $(document).ready(function(){
         var textInput = "<textarea id = 'textInput' class = 'col-md-10 col-sm-10 input" + blocks[i] + "' name = 'textInput'>";
         $("#timeSlot" + blocks[i]).append(textInput);
 
-        var saveBtn = "<input type = 'button' id = 'save" + blocks[i] + "' class = 'saveBtn col-md-1 col-sm-1'>"
+        var saveBtn = "<button type = 'button' id = 'save" + blocks[i] + "' class = 'saveBtn col-md-1 col-sm-1'><i class='far fa-save fa-4x'></i></button>"
         $("#timeSlot" + blocks[i]).append(saveBtn);
   
         // The following will append either "AM" or "PM" to the end of the text within the first <p> child of any element.
@@ -84,7 +84,7 @@ $(document).ready(function(){
     }
     getFromStorage();
 
-    // Here is a very simple if statement that simply clears the user's local storage should the current hour & minutes
+    // Here is a very simple if statement that simply clears the user's local storage should the current hour & minutes equal 23 (hours) & 59 (minutes)
     if(currentHour == 23 && currentMinute == 59){
         localStorage.clear();
     }
@@ -96,5 +96,5 @@ $(document).ready(function(){
 // TO DO:
 // FIX IF/ELSE STATEMENT ON LINE 48                                        - FIXED
 // STORE TEXT INPUT TO LOCAL MEMORY & ENSURE IT PERSISTS UPON RELOADING    - FIXED
-// CLEAR LOCAL STORAGE AT THE BEGINNING OF A NEW DAY
+// CLEAR LOCAL STORAGE AT THE BEGINNING OF A NEW DAY                       - FIXED
 // CLEAN UP THE PRESENTATION
